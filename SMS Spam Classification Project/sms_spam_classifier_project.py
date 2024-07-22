@@ -1,3 +1,6 @@
+'''Project: SMS Spam Classifier using NLP and Machine learning'''
+
+'''Using Bag of words text preprocessing'''
 
 #importing dataset
 
