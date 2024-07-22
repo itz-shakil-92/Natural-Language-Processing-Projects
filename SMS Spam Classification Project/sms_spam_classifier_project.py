@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
 
 #importing dataset
 
@@ -38,4 +32,28 @@ X=cv.fit_transform(corpus).toarray()
 
 y=pd.get_dummies(messages['label'])
 y=y.iloc[:,1].values
+
+
+#train test split
+from sklearn.model_selection import train_test_split
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=100)
+
+
+#train model using naive bayes classifier
+from sklearn.naive_bayes import MultinomialNB
+spam_detect_model=MultinomialNB().fit(X_train, y_train)
+y_pred=spam_detect_model.predict(X_test) 
+
+
+#confusion metrics of the model
+from sklearn.metrics import confusion_matrix
+confusion_m=confusion_matrix(y_test, y_pred)
+
+
+#accuracy score of the model
+from sklearn.metrics import accuracy_score
+accuracy_of_model=accuracy_score(y_test, y_pred)
+print(f"The Accuracy score of the model is : {accuracy_of_model}")
+   
+   
    

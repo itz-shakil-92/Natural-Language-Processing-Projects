@@ -62,7 +62,9 @@ confusion_m=confusion_matrix(y_test, y_pred)
 #accuracy score of the model
 from sklearn.metrics import accuracy_score
 accuracy_of_model=accuracy_score(y_test, y_pred)
-print(accuracy_of_model)
+print(f"The Accuracy score of the model is : {accuracy_of_model}")
+
+
 
 
 
